@@ -18,4 +18,9 @@ public class ProductService {
     public void add(Product product) {
         productRepo.saveAndFlush(product);
     }
+
+    public List<Product> getAll() {
+
+        return productRepo.findAll();
+    }
 }

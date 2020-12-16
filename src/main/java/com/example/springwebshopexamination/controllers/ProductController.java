@@ -10,23 +10,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class ViewController {
+public class ProductController {
 
     @Autowired
     ProductService productService;
 
     @GetMapping("/products")
     public String getProducts(Model model) {
-        model.addAttribute("product", new Product());
-        return "allproducts";
+        model.addAttribute("products", productService.getAll());
+        return "productindex";
     }
 
     @PostMapping("/products")
     public String addProduct(Product product, Model model) {
-        model.addAttribute("product", new Product());
+        model.addAttribute("products", productService.getAll());
         productService.add(product);
 
-        return "redirect:allproducts";
+        return "redirect:productindex";
     }
 
 }

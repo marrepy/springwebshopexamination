@@ -1,4 +1,4 @@
 package com.example.springwebshopexamination.models;
 
-public class Basket {
+public class Cart {
 }

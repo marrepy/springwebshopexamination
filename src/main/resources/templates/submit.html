@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<body>
+<div layout:fragment="content" class="container">
+    <h1>User Order</h1>
+    <form th:action="@{/order/registration}" th:object="${currentUser}" th:method="post">
+        <input type="text" th:field="${currentUser.name}" placeholder="Enter name" required>
+        <input type="email" th:field="${currentUser.email}" placeholder="Enter email" required>
+        <input class="btn red accent-2" type="submit" value="Submit">
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<body>
+<div layout:fragment="content" class="container">
+    <h1>Shopping Cart</h1>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="item : ${orderlines}">
+            <td th:text="${item.getProduct().getProductName()}"></td>
+            <td th:text="${item.getProduct().getPrice()}"></td>
+            <td th:text="${item.getQuantity()}"></td>
+            <td>
+                <p>
+                    <a th:href="@{/cart/increase/{id}(id=${item.getProduct().getId()})}">Increase quantity</a>
+                </p>
+                <p>
+                    <a th:href="@{/cart/reduce/{id}(id=${item.getProduct().getId()})}">Reduce quantity</a>
+                </p>
+            </td>
+        </tr>
+    </table>
+    <h5>Grand total: <span th:text="${carttotal}"></span> €</h5>
+    <form th:action="@{/cart/checkout}" method="get">
+        <input class="btn red accent-2" type="submit" value="checkout">
+    </form>
+</div>
+</body>
+</html>

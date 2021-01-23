@@ -23,4 +23,8 @@ public class ProductService {
 
         return productRepo.findAll();
     }
+
+    public Product getById(int id) {
+        return productRepo.findById(id).get();
+    }
 }

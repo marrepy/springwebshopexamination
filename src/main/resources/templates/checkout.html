@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<br>
+
+<tr>
+    <form action="#" th:action="@{/user/registration}" method="get">
+
+        <p><input type="submit" value="register"/></p>
+    </form>
+
+    <form action="#" th:action="@{/user/login}" th:object="${user}" method="get">
+
+        <p><input type="submit" value="login"/></p>
+    </form>
+
+</tr>
+
+<br/>
+
+</body>
+
+</html>

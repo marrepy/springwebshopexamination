@@ -14,7 +14,7 @@
 
     <td th:text="${pair.price}"/>
 
-    <form action="#" th:action="@{/products}" th:object="${pair}" method="post">
+    <form action="#" th:action="@{/cart}" th:object="${pair}" method="post">
 
         <p><input type="submit" value="Add"/></p>
     </form>
